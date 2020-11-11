@@ -1,0 +1,9 @@
+{
+  "name": "@api-template/domain-event-publisher",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  }
+}

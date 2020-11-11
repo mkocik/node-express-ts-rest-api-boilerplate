@@ -1,0 +1,38 @@
+version: '3.2'
+services:
+  user-service:
+    build:
+      context: '.'
+      dockerfile: 'api/user-service/Dockerfile'
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "mongo-database"
+    volumes:
+      - ./api/user-service:/usr/src/app/api/user-service
+      - ./packages:/usr/src/app/packages
+    environment:
+      - PORT=8080
+      - API_VERSION=v1
+      - PROTOCOL=http
+      - RDS_HOSTNAME=localhost
+      - MONGODB_URI=mongodb://root:1234@mongo-database:27017/user
+
+  # setup the MongoDB database
+  mongo-database:
+    # pulls the latest, stable image
+    image: mongo:latest
+    container_name: user-service-mongodb
+
+    # bind mount volume for MongoDB documents
+    volumes:
+      - ./mongo-data:/data/db
+
+    ports:
+      - '27017:27017'
+
+    # configure the Docker entrypoint for MongoDB
+    environment:
+      - MONGO_INITDB_DATABASE=user
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234

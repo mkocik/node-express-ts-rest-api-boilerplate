@@ -1,0 +1,47 @@
+{
+  "name": "@api-template/auth-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --watch ../../packages --watch src --exec ts-node ./index.ts",
+    "debug": "nodemon --exec node --inspect=0.0.0.0:9229 --require ts-node/register ./index.ts",
+    "prod": "npm run build && npm run start",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@api-template/api-service": "1.0.0",
+    "@api-template/domain-event-publisher": "1.0.0",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express-validator": "^6.6.1",
+    "http-status": "^1.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.8",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/chai": "^4.2.14",
+    "@types/chai-http": "^4.2.0",
+    "@types/express": "^4.17.8",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mocha": "^8.0.3",
+    "@types/mongoose": "^5.7.36",
+    "@types/mongodb": "^3.5.32",
+    "@types/node": "^10.9.4",
+    "@types/uuid": "^8.3.0",
+    "mongodb": "^3.6.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
+    "ts-node": "^7.0.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.3"
+  }
+}
