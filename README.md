@@ -76,7 +76,7 @@ yarn test
 ```
 
 ### More
-If you want to know more about the structure and usage of this template, please feel free to visit TODO and check the article out!
+If you want to know more about the structure and usage of this template, please feel free to visit [https://medium.com/@mkocik/41c65f84d9c1](https://medium.com/@mkocik/41c65f84d9c1) and check the article out!
 
 ## Contributing
 If you like the project enough to collaborate and you see some improvements to be made, please create a Pull Request.
