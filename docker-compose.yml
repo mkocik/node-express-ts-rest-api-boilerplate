@@ -4,6 +4,7 @@ services:
     build:
       context: '.'
       dockerfile: 'api/user-service/Dockerfile'
+    image: user-service
     ports:
       - "8080:8080"
     depends_on:
@@ -36,3 +37,16 @@ services:
       - MONGO_INITDB_DATABASE=user
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=1234
+
+  user-service-test:
+    image: user-service
+    command: dockerize -wait tcp://mongo-database:27017 -wait tcp://user-service:8080 -timeout 10s bash -c "yarn test"
+    environment:
+      - PORT=8080
+      - API_VERSION=v1
+      - PROTOCOL=http
+      - RDS_HOSTNAME=user-service
+      - MONGODB_URI=mongodb://root:1234@mongo-database:27017/user
+    depends_on:
+      - mongo-database
+      - user-service

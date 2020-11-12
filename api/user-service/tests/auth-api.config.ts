@@ -1,9 +1,9 @@
 import MongoClient, {Db} from 'mongodb';
 import {config} from "dotenv";
-
-export const SERVICE_URL = 'http://localhost:8080/api/v1/';
-
 config();
+
+export const SERVICE_URL = process.env.PROTOCOL + '://' + process.env.RDS_HOSTNAME + ':' +
+    process.env.PORT + '/api/' + process.env.API_VERSION;
 
 export async function dbConnector(): Promise<Db> {
     const connection = await MongoClient.connect(process.env.MONGODB_URI as string, {

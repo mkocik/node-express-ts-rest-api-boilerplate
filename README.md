@@ -46,10 +46,16 @@ yarn prod
 The advantage of the docker-compose is that it sets up the MongoDB database so you don't have to worry about it. And the more services you have, the harder it will be to run them 'by hand'.
 
 ## Testing
-You can use the following command, to run all the tests inside the given docker container:
+If you run the API using `docker-compose up` command all the tests are being executed.
+
+But if you need to just run the tests, you can either use docker command:
 
 ```basah
-TODO
+docker-compose up --build --abort-on-container-exit
+```
+Or go directly to the service you want to test and run 
+```basah
+yarn test
 ```
 
 ### Single service structure

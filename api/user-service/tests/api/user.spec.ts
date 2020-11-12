@@ -3,8 +3,7 @@ import chaiHttp from 'chai-http';
 import 'mocha';
 import {dbConnector, SERVICE_URL} from "../auth-api.config"
 import {Collection, Db} from "mongodb";
-import {Role} from "../../src/common/role";
-import {loginAndGetAccessToken, validateErrorArray, validateErrorObj, wait} from "../test-util";
+import {validateErrorArray, validateErrorObj} from "../test-util";
 
 chai.use(chaiHttp);
 

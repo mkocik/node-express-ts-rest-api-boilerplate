@@ -10,7 +10,7 @@
     "debug": "nodemon --exec node --inspect=0.0.0.0:9229 --require ts-node/register ./index.ts",
     "prod": "npm run build && npm run start",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
-    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts --exit"
   },
   "author": "",
   "license": "ISC",
