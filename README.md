@@ -45,6 +45,8 @@ yarn prod
 ```
 The advantage of the docker-compose is that it sets up the MongoDB database so you don't have to worry about it. And the more services you have, the harder it will be to run them 'by hand'.
 
+To see the API documentation please open [http://localhost:8080/api/v1/docs/](http://localhost:8080/api/v1/docs/)
+
 ## Testing
 If you run the API using `docker-compose up` command all the tests are being executed.
 
