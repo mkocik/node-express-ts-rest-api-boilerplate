@@ -35,7 +35,7 @@ docker-compose up
 ```
 And open the url: [http://localhost:8080/api/v1](http://localhost:8080/api/v1)
 
-Or you can open the user-service directory and run one of the following commands:
+Or you can open the user-service directory, rename `.env.example` file to `.env` and run one of the following commands:
 
 ```bash
 yarn start
